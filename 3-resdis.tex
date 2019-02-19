@@ -1,0 +1,178 @@
+\label{sec:result}
+\section{Young's equation considering pinning force}
+The time-averaged density distribution of
+contact line pinning system for $z_\text{pin}=4.0~\text{nm}$ is shown in Fig.~\ref{fig:dens}.
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=120mm]{./figs/fig2.pdf}
+  \end{center} 
+  \caption{\label{fig:dens}
+Time-averaged density distribution of contact line pinning system for $z_\text{pin}=4.0~\text{nm}$
+used as an example system for the analysis of vertical force balance exerted on a rectangular control volume, shown in magenta, set around the contact line.
+  }
+\end{figure}
+We supposed a control volume involving the contact line and comprised by four faces:
+right face set at the center of the system,
+left face set in vacuum layer i.e. solid liquid transition area at liquid layer,
+top and bottom faces both normal to the wall and set outside the liquid vapor transition layer.
+Assuming the total force on argon in the control volume exerted by the wall atoms as $\zeta_{\text{pin}}$,
+the momentum conservation law can be written by the force balance on the control volume~\cite{Yamaguchi2019}:
+\begin{equation}
+\zeta_\text{pin}=\int_{x_{\text{L}}}^{x_{\text{C}}}\tau_{zz}(x,z_\text{T})dx-
+\int_{x_{\text{L}}}^{x_{\text{C}}}\tau_{zz}(x,z_\text{B})dx+
+\int_{z_{\text{B}}}^{z_{\text{T}}}\tau_{xz}(x_{\text{C}},z)dz
+\end{equation}
+,where the third term on right hand must be zero because of symmetric property.
+This equation can be deformed as below with isotropic stress term $\tau^{\text{bulk}}_{\text{L}}$ and $\tau^{\text{bulk}}_{\text{V}}$
+which have the opposite sign of pressures $p_{\text{int}}$ and $p_{\text{ext}}$.
+\begin{equation}
+\label{eq:FB1}
+\zeta_\text{pin}=\int_{x_{\text{L}}}^{x_{\text{C}}}\tau_{zz}(x,z_\text{T})-\tau^{\text{bulk}}_{\text{V}}(x,z_\text{T})dx-
+\int_{x_{\text{L}}}^{x_{\text{C}}}\tau_{zz}(x,z_\text{B})-\tau^{\text{bulk}}_{\text{L}}(x,z_\text{T})dx-
+(p_{\text{int}}-p_{\text{ext}})(x_{\text{C}}-x_{\text{L}})
+\end{equation}
+Applying Young-Laplace's equation and Bakker's equation to Eq.~\eqref{eq:FB1}~\cite{Yamaguchi2019}, 
+anyone can get the revised Young's equation:
+\begin{eqnarray}
+\zeta_{\text{pin}}
+&=&(\gsv|_{\eta_{\text{phob}}}-\gs0)-(\gsl|_{\eta_{\text{phil}}}-\gs0)-\frac{x_{\text{C}}-x_{\text{L}}}{R}\glv \\
+&=&\gsv|_{\eta_{\text{phob}}}-\gsl|_{\eta_{\text{phil}}}-\glv \text{cos}\theta
+\label{eq:rY}
+\end{eqnarray}
+,where $\theta$ is a contact angle and geometrical relation $\text{cos}\theta=(x_{\text{C}}-x_{\text{L}})/R$ was applied.
+If a contact angle is calculated, we can calculate the pinning force $\zeta_{\text{pin}}$ from this Eq.~\eqref{eq:rY}.
+%%i.e. the total force on Ar fluids around the discontinuous wetting line exerted by wall atoms.
+We show the comparison of two forces,
+the total tangential force on Ar particles exerted by wall atoms around the wetting discontinuous line i.e. pinning force
+and the force calculated by revised Young's equation~\eqref{eq:rY}, in Figure.~\ref{fig:clpinning} 
+The value of $\gsv|_{\eta_{\text{phob}}}$ and $\gsl|_{\eta_{\text{phil}}}$are the resultant of Thermodynamic Integration~\cite{Yamaguchi2019}
+and $\glv=11.3\times 10^{-3}\text{N/m}$~\cite{Nishida14}.
+In the Fig~\ref{fig:clpinning}, the pinning force and the force calculated by the rivised Young's equation are
+slightly different because of heat fluctuation and the assumption that liquid vapor interfacial tension is constant not depending on the curvature of meniscus.
+However, we confirmed the validity of the revised Young's Eq.~\eqref{eq:rY} qualitatively 
+because Fig.~\ref{fig:clpinning} showed the similar response of two forces to the position of potential wall $z_{\text{pw}}$,and
+the response showed the existence of saturation value of pinning force.
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=100mm]{./figs/fig4.pdf}
+  \end{center} 
+  \caption{\label{fig:clpinning}
+    The comparison of pinning force and the force calculated by revised Young's equation for various positions of potential wall
+with screenshots of the calculation system.
+  }
+\end{figure}
+
+\section{Quantification of the pinning force on solid liquid interface}
+The pinning force has a saturation value according to Fig.~\ref{fig:clpinning}.
+When the position of the potential wall $z_{\text{pw}}$ get high and the wetting discontinuous line is covered by Ar liquids,
+the pinning force must reach maximum value according to Fig.~\ref{fig:systems}(a): 
+the bigger pinning force would be induced, the more Ar molecules around the wetting discontinuous line 
+because the pinning force is the total force of the unbalance force on Ar molecule exerted by the two different wetting area. 
+We can calculate the relation between saturation value of the pinning force and Thermodynamics 
+with liquid pinning system in Fig.~\ref{fig:systems}(c) 
+through a thought experiment as shown in Fig.~\ref{fig:SLpin}.
+Assuming the rectangular control volume with all faces set at vacuum layers to include all Ar fluids
+,we can calculate the pinning force by the force balance on Ar liquids:
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=100mm]{./figs/fig5.pdf}
+  \end{center} 
+  \caption{\label{fig:SLpin}
+    Thought experiment of liquid pinning. Red and yellow solid line denote the initial positions of potential wall and piston,respectively.
+The dotted lines denote the position after the quasi-statistical displacement.
+  }
+\end{figure}
+
+\begin{equation}
+\label{eq:SLF}
+2l \zeta_{\text{pin}}=F_{\text{pw}}-F_{\text{pis}}^{\text{int}},
+\end{equation}
+where $l$ and $F_{\text{pw}}$ are system length in y-direction  and 
+the total force on the potential wall exerted by Ar fluids,respectively.
+In addition, assuming a virtual quasi-statistical displacement of the bottom wall and piston as 
+$\delta z_{\text{pin}}$ and $\delta z_{\text{pis}}$, respectively, 
+the minimum mechanical work $\delta W$ 
+required for this change is associated with the change in the Gibss free energy G given by
+\begin{equation}
+\label{eq:MW}
+\delta G\equiv \delta W =F_{\text{pin}}\delta z_{\text{pin}}-F_{\text{pis}}\delta z_{\text{pis}}.
+\end{equation}
+Here, this Gibs's free energy change $\delta G$ is given by 
+the product of the interface area change and the interfacial free energy as
+\begin{equation}
+\label{eq:FE}
+\delta G=\left(\gsl|_{\eta_{\text{phob}}}-\gs0 \right) \times \delta z_{\text{pis}} 2l
+-\left(\gsl|_{\eta_{\text{phil}}}-\gs0 \right) \times \delta z_{\text{pin}} 2l.
+\end{equation}
+Let $F_{\text{pw}}$ be canceled by applying Eq.~\eqref{eq:SLF} into Eq.~\eqref{eq:MW},
+and after deformation of Eq.~\eqref{eq:MW} with Eq.~\eqref{eq:FE}
+,pinning force $\zeta_{\text{pin}}$ is given as
+\begin{eqnarray}
+\zeta_{\text{pin}}&=&
+\frac{
+\left(\gsl|_{\eta_{\text{phob}}}-\gs0\right)\delta z_{\text{pis}}
+-
+\left(\gsl|_{\eta_{\text{phil}}}-\gs0\right)\delta z_{\text{pw}}
+}{\delta z_{\text{pw}}}
++\frac{\delta z_{\text{pis}}-\delta z_{\text{pw}}}
+{2l\delta z_{\text{pw}}}
+F_{\text{pis}} \nonumber \\
+&=&
+\frac{
+W_{\text{SL}}|_{\eta_{\text{phil}}}\delta z_{\text{pw}}
+-
+W_{\text{SL}}|_{\eta_{\text{phob}}}\delta z_{\text{pis}}
+}
+{\delta z_{\text{pw}}}
++\frac{\delta z_{\text{pis}}-\delta z_{\text{pw}}}
+{\delta z_{\text{pw}}}
+\left(
+\glv+\frac{F_{\text{pis}}}{2l}
+\right)
+\label{eq:pin0}
+\end{eqnarray}
+,where $W_{\text{SL}}\equiv\glv+\gs0-\gsv$ is the work of adhesion of solid-liquid interface.
+The difference of the adsorption layer density distribution would cause the gap between $z_{\text{pis}}$ and $z_{\text{pw}}$
+that is negligibly small when the channel width is enough big.%or the wetting of two area is almost same.
+Therefore, assuming $z_{\text{pis}}\simeq z_{\text{pw}}$
+,we can simply express the pinning force as the difference of the work of adhesion by deforming Eq.~\eqref{eq:pin0}. 
+\begin{equation}
+\zeta_{\text{pin}}=W_{\text{SL}}|_{\eta_{\text{phil}}}-W_{\text{SL}}|_{\eta_{\text{phob}}}
+\label{eq:pin1}
+\end{equation}
+We compared the pinning force and 
+the precalculated~\cite{Yamaguchi2019} work of adhesion at two different wetting areas calculated by using Dry-Surface method~\cite{Leroy2015},
+one of Thermodynamic Integration,
+to show the validity of this Eq.~\eqref{eq:pin1} at Fig.~\ref{fig:pinSL}.
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=120mm]{./figs/fig6.pdf}
+  \end{center} 
+  \caption{\label{fig:pinSL}
+    The pinning force of solid-liquid interface v.s. the difference of the work of adhesion of two area:lyophilic and lyophobic part
+,this relation is shown as Eq.~\eqref{eq:pin1}.
+  }
+\end{figure}
+
+\section{conclusion}
+We carried out MD simulations of a quasi-2d Lennard-Jones liquid 
+between two parallel flat walls both of which had wetting discontinuous lines.
+We calculated the pinning force and the contact angle% of a system with contact lines of three phases (solid,liquid,and vapor)
+to show qualitatively
+ the validity of the revised Young's equation which we derived theoretically
+by accounting for the force balance on the control volume including the contact line.
+The resultant showed that the pinning force at contact line had a saturation value and reached it
+when the wetting discontinuous line was covered by liquid.
+We made a system with only liquid phase and solid phase which had the wetting discontinuous lines
+to examine the saturation value.
+We concluded that the pinning force equals to the difference of the work of adhesion 
+at two wetting part divided at the discontinuous line according to MD calculation and our old research data.
+
+%flat smooth　surface　の先行研究に対して，flat でchemicalにinhomogeneousな面でのピニングを観察した．
+%現実的な壁面はflatでない面だから，かなり理想的な場合にしか今回の研究は適応できないが，拡張をすることで
+%より一般的なphysicalやchemicalなpinningを評価できるかもしれない．
+%また固液界面が曲率を有したときなどは，smoothでも壁面原子が離散的に存在していること
+%によってCNT等のナノ構造物を液体が濡れ広がるときにpinning現象が起きる可能性もある．%
+%濡れ広がるような動的な接触角に固体壁面の状態が与える影響なども考えるべき．
+
+%今回のは静止平衡，flat surface

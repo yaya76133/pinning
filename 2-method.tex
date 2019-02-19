@@ -1,0 +1,162 @@
+In order to examine pinning phenomenon induced by inhomogeneous wettability of wall surface as shown in Fig.~\ref{fig:systems}(a),
+we employed two types of equilibrium simulation systems 
+with respect to flat solid surfaces with inhomogeneous wettability, as shown in Fig.~\ref{fig:systems}:(b) for the contact line pinning and (c) liquid pinning calculation.
+MD simulation method is almost same as the past paper~\cite{Yamaguchi2019} .
+In all calculation systems, we used mono-atomic fluid molecules(Argon) and mono-atomic wall molecules 
+whose structure is face-centered crystal(FCC).
+Hereafter, fluid and wall molecules are denoted by `f' and `w', respectively.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=100mm]{./figs/fig1.pdf}
+  \end{center} 
+  \caption{\label{fig:systems}
+(a)Schematic of pinning induced by heterogeneous wettability.
+    Lennard-Jones(LJ) liquid simulation systems on flat surfaces 
+with inhomogeneous wettabilty which induces pinning of (b)the contact line
+and (c)liquid.
+  }
+\end{figure}
+
+\subsection{Potential}
+Generic particles interacting through a 12-6 Lennard-Jones potential were adopted as the fluid molecules 
+for ease of physical understanding as in our previous study.
+The 12-6 LJ potential given by 
+\begin{equation}
+  \label{eq:LJ}
+  \Phi^\mathrm{LJ}(r_{ij})=
+  4\epsilon_\mathrm{ff} \left[
+    \left(\frac{\sigma_\mathrm{ij}}{r_{ij}}\right)^{12} 
+    -
+    \left(\frac{\sigma_\mathrm{ij}}{r_{ij}}\right)^{6} 
+   \right]
+\end{equation}
+was used as fluid-fluid and fluid-wall interaction.
+In this 12-6 LJ potential, $r_{ij}$ was the distance between the
+molecules $i$ at position 
+$\bm{r}_{i}$ and $j$ at $\bm{r}_{j}$, while 
+$\epsilon_\mathrm{ij}$ and $\sigma_\mathrm{ij}$ 
+denoted the LJ energy and length parameters, 
+respectively. 
+This LJ interaction was truncated at a cut-off 
+distance of $r^\mathrm{c}_\mathrm{ij}=3.5\,\sigma_\mathrm{ij}$ 
+and quadratic functions were added so that the potential 
+and interaction force smoothly vanished at $r_{c}$
+as same as in our previous study~\cite{Yamaguchi2019}.
+
+As above, the structure of solid wall is FCC and
+ its inter-atomic potential is expressed by the following harmonic potential given by
+\begin{equation}
+\Phi^\mathrm{harmonic}(r_{ij})=
+\frac{k}{2}(r_{ij}-r_{0})^{2},
+\end{equation}
+where $k$ and $r_{0}$ denote the spring constant and equilibrium distance, respectively.
+These parameters and the mass of the wall atom corresponding with the property of platinum.
+
+In addition to these intermolecular potentials, we used a one-dimentional field given by
+\begin{equation}
+\label{eq:Potwall}
+\Phi^\mathrm{P}(z'_{i})=
+4\pi\rho_{\text{n}}\epsilon^{0}_{fw}\sigma_{fw}^{2}\left[
+\frac{1}{5}\left( \frac{\sigma_{fw}}{z'_{i}}\right)^{10}
+-\frac{1}{2}\left( \frac{\sigma_{fw}}{z'_{i}}\right)^{4}
+\right]
+\end{equation}
+as a function of the distance $z'_{i}=|z_{i}-z_{\text{pw}}|$
+between a fluid particle and a potential wall.
+The potential and mass parameters are summarized in Table~\ref{tab:table1}.
+
+\subsection{Simulation systems}
+For both of the calculation systems, liquid bath was put between two solid walls parallel to yz-plane and
+periodic boundary conditions were set in y-direction as shown in Fig.~\ref{fig:systems}(b)(c),
+so that liquid was shaped quasi two dimension: the effect of line tension was neglected.
+The position of the outermost layers of solid walls consisting FCC was fixed, 
+and the temperature of the second outermost layers was controlled 
+by using the standard Langevin thermostat in all directions at a control temperature $T_{\text{c}}$
+with a Debye temperature $T_{\text{Debye}}$.
+Solid walls have eight layers 
+so that solid wall atoms of  the second outermost layer don't interact with liquid molecules.
+
+The wettability of the solid walls is inhomogeneous, lower and upper layers are lyophilic and lyophobic, respectively.
+Solid liquid interaction coefficients of lyophilic and lyophobic parts are $\eta_{\text{phil}}$ and $\eta_{\text{phob}}$, respectively.
+For contact line pinning system, a mirror boundary condition was set at the top boundary in z-direction
+and a potential wall with a potential field Eq.~\eqref{eq:Potwall} was fixed at various positions $z_{\text{pw}}$,
+so that we made equillibrium systems in Fig.~\ref{fig:systems}(a).
+For liquid pinning system, the potential wall was fixed at a position $z_{\text{pw}}=1.4$~nm,
+and additionally we used a piston with a potential field Eq.~\eqref{eq:Potwall} to make liquid single-phase 
+under the following equation of motion:
+\begin{equation}
+m_{\text{pis}}\frac{d^{2} z_{\text{pis}}}{dt^{2}}=F_{\text{pis}}^{\text{int}}-A_{\text{pis}}p_{\text{pis}}
+\end{equation}
+where $z_{\text{pis}}$, $A_{\text{pis}}$, $m_{\text{pis}}$ and $p_{\text{set}}$ 
+is a position, area, weight and control pressure of piston,respectively.
+In the liquid pinning system, the piston cannot control the liquid pressure exactly
+because the piston contacts with the wall surface inducing the negligible effect of the solid liquid interfacial tension.
+The internal force on the piston $F_{\text{pis}}^{\text{int}}$ is the total normal force exerted by fluid molecules.
+%with a potential field Eq.~\eqref{eq:Potential} at $z_{\text{pw}}=z_{\text{pis}}$
+
+The velocity Verlet method was applied for the integration of the Newtonian equation of motion 
+with a time increment $\Delta t$ of 5 fs for all systems. 
+Values of the simulation parameters are summarized in Table~\ref{tab:table1} with the corresponding non- dimensional ones, 
+which are normalized by the corresponding standard values.  
+
+\begin{table}[!t]
+\caption{\label{tab:table1} 
+Simulation parameters. Corresponding non-dimensional values
+are shown below.
+}
+%\begin{tabular*}{100mm}{@{\extracolsep{\fill}}|c|c|c|} \hline\hline
+\begin{ruledtabular}
+\begin{tabular}{cccc}
+property  & value & unit & non-dim. value
+\\ \hline
+$\sigma_\mathrm{ff}$ & 0.340 & nm & 1
+\\
+$\sigma_\mathrm{ww}$ 
+\footnote{Used only for Lorentz mixing rule.}
+& 0.350 & nm & 1.03 
+\\
+$\sigma_\mathrm{fw}$ & $(\sigma_\mathrm{ff} + \sigma_\mathrm{ww})/2$ 
+
+\\
+$\epsilon_\mathrm{ff}$ & $1.67 \times 10^{-21}$ & J & 1
+\\
+$\epsilon_\mathrm{ww}$ 
+\footnote{Used only for Berthelot mixing rule.}
+& $1.000\times 10^{-21}$ & J & 0.599
+\\
+$\epsilon^{0}_\mathrm{fw}$ & 
+$ \sqrt{\epsilon_\mathrm{ff}\epsilon_\mathrm{ww}}$
+\\
+$\epsilon_\mathrm{fw}$ & 
+$ \eta_{\text{phil}} \epsilon^{0}_\mathrm{fw}$ or $\eta_{\text{phob}} \epsilon^{0}_\mathrm{fw}$
+\\
+$\eta_{\text{phil}}$ &
+0.5& - & -
+\\
+$\eta_{\text{phob}}$ &
+0.001 - 0.5& - & -
+\\
+$m_\mathrm{f}$ & $6.63 \times 10^{-26}$ & kg & 1
+\\
+$m_\mathrm{w}$ & $32.4\times 10^{-26}$ & kg & 4.88
+\\
+$m_{\text{pis}}$ & $14.7\times 10^{-22}$ & kg & $2.22\times10^{4}$
+\\
+$r_0$ (FCC) & $0.277$ & nm & 0.815
+\\
+$k$ & 46.8  & N/m & 3.24$\times10^{3}$
+\\
+$T_\mathrm{c}$ & 85  & K & 0.703
+\\
+$N_\mathrm{f}$ (contact line pinning) & 5000  & - & -
+\\
+$N_\mathrm{f}$ (liquid pinning) & 10000 & - & -
+\\
+$p_\mathrm{set}$ &1.00$\times 10^{6}$ & nm & 2.35$\times10^{-2}$
+\\
+$A_\mathrm{pis}$ &43.6 & $\text{(nm)}^{2}$ & 3.77$\times10^{2}$
+\end{tabular}
+\end{ruledtabular}
+%
+\end{table}
